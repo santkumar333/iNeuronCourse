@@ -1,0 +1,135 @@
+1. What is the role of try and exception block? 
+The try and except blocks are used to handle errors in Python. 
+The try block contains the code that you are trying to run, and the except block contains the code that you want to run if an error occurs.
+
+
+2. What is the syntax for a basic try-except block? 
+Ex:
+try:
+  print(10 / 0)
+except ZeroDivisionError:
+  print("Division by zero error")
+3. What happens if an exception occurs inside a try block and there is no matching except block? 
+If an exception occurs inside a try block and there is no matching except block, the exception will be unhandled. 
+This means that the program will crash.
+For example, the following code will crash because there is no matching except block for the ZeroDivisionError exception:
+Code:
+try:
+  print(10 / 0)
+except:
+  print("An error occurred")
+
+4. What is the difference between using a bare except block and specifying a specific exception type? 
+Specific Exception Type:
+When you specify a specific exception type in an except block, such as except ValueError, 
+you are explicitly indicating that you want to handle that particular type of exception.
+Bare Except Block:
+A bare except block, written as except:, does not specify any particular exception type. 
+It acts as a catch-all block that handles any type of exception that occurs within the try block.
+
+5. Can you have nested try-except blocks in Python? If yes, then give an example.
+try:
+    # Outer try block
+    numerator = 10
+    denominator = 0
+
+    try:
+        # Inner try block
+        result = numerator / denominator
+        print("The result is:", result)
+    except ZeroDivisionError:
+        # Inner except block
+        print("Error: Division by zero occurred.")
+except Exception as e:
+    # Outer except block
+    print("An error occurred:", str(e))
+
+ 
+6. Can we use multiple exception blocks, if yes then give an example. 
+try:
+    numerator = 10
+    denominator = 0
+    result = numerator / denominator
+    print("The result is:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero occurred.")
+except ValueError:
+    print("Error: Invalid value encountered.")
+except Exception as e:
+    print("An error occurred:", str(e))
+
+
+7. Write the reason due to which following errors are raised: 
+a. EOFError 
+b. FloatingPointError 
+c. IndexError 
+d. MemoryError 
+e. OverflowError 
+f. TabError 
+g. ValueError 
+Ans:
+EOFError is raised when the end of a file is reached unexpectedly. This can happen if you try to read from a file that is empty, or if you try to read past the end of a file.
+FloatingPointError is raised when a floating-point operation results in an invalid value. This can happen if you divide by zero, or if you try to represent a number that is too large or too small.
+IndexError is raised when an index is out of range for a sequence. This can happen if you try to access an element of a list or a string that does not exist.
+MemoryError is raised when the Python interpreter runs out of memory. This can happen if you allocate too much memory, or if you have a memory leak in your program.
+OverflowError is raised when a numerical operation results in a value that is too large to be represented. This can happen if you try to add two very large numbers together, or if you try to divide a very small number by a very small number.
+TabError is raised when a tab character is encountered in a string that is being parsed. This is because tabs are not allowed in Python strings.
+ValueError is raised when a value is not of the correct type for an operation. This can happen if you try to add a string to an integer, or if you try to open a file that does not exist.
+
+8. Write code for the following given scenario and add try-exception block to it. a. Program to divide two numbers 
+b. Program to convert a string to an integer 
+c. Program to access an element in a list 
+d. Program to handle a specific exception 
+e. Program to handle any exception
+
+a. Program to divide two numbers:
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+    result = numerator / denominator
+    print("The result of the division is:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero occurred.")
+except Exception as e:
+    print("An error occurred:", str(e))
+
+b. Program to convert a string to an integer:
+try:
+    num_str = input("Enter a number: ")
+    num = int(num_str)
+    print("The integer value is:", num)
+except ValueError:
+    print("Error: Invalid input. Please enter a valid integer.")
+except Exception as e:
+    print("An error occurred:", str(e))
+c. Program to access an element in a list:
+try:
+    my_list = [1, 2, 3, 4, 5]
+    index = int(input("Enter the index to access: "))
+    value = my_list[index]
+    print("The value at index", index, "is:", value)
+except IndexError:
+    print("Error: Index out of range.")
+except Exception as e:
+    print("An error occurred:", str(e))
+d. Program to handle a specific exception:
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print("The result is:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero occurred.")
+except ValueError:
+    print("Error: Invalid input. Please enter a valid integer.")
+except Exception as e:
+    print("An error occurred:", str(e))
+e. Program to handle any exception:
+try:
+    # Your code here
+except Exception as e:
+    print("An error occurred:", str(e))
+
+
+
+
+
